@@ -11,8 +11,7 @@ test('header should show', async ({ mount }) => {
 });
 
 regularTest('message should show after scroll', async ({ page }) => {
-	await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-	await page.waitForTimeout(1000);
+	await page.goto('http://localhost:5173');
 	await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
 	const locator = page.getByText('today!');
 	await regularExpect(locator).toBeVisible();
