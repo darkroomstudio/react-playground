@@ -6,11 +6,10 @@ export default function App() {
 		<Router>
 			Home
 			<Link to="/scroll-trigger">GSAP Scroll Trigger Example</Link>
+			<Link to="/mask-cursor">Mask Cursor Example</Link>
 			<Routes>
-				<Route
-					path="/scroll-trigger"
-					element={<pg.ScrollTriggerPage />}
-				></Route>
+				<Route path="/scroll-trigger" element={<pg.ScrollTriggerPage />} />
+				<Route path="/mask-cursor" element={<pg.MaskCursor />} />
 			</Routes>
 		</Router>
 	);

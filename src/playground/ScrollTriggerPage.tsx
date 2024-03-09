@@ -27,7 +27,6 @@ export const ScrollTriggerPage: React.FC<ScrollTriggerProps> = () => {
 		document.body.style.background =
 			'linear-gradient(7deg,rgba(215, 176, 138, 1) 0%,rgba(37, 80, 156, 1) 100%)';
 
-		// Cleanup function to revert styles on component unmount
 		return () => {
 			document.head.removeChild(style);
 			document.body.style.background = '';
