@@ -12,6 +12,29 @@ export const ScrollTriggerPage: React.FC<ScrollTriggerProps> = () => {
 	const dashboard = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
+		const style = document.createElement('style');
+		style.type = 'text/css';
+		style.innerHTML = `
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    `;
+		document.head.appendChild(style);
+
+		document.body.style.background = 'rgb(215, 176, 138)';
+		document.body.style.background =
+			'linear-gradient(7deg,rgba(215, 176, 138, 1) 0%,rgba(37, 80, 156, 1) 100%)';
+
+		// Cleanup function to revert styles on component unmount
+		return () => {
+			document.head.removeChild(style);
+			document.body.style.background = '';
+		};
+	}, []);
+
+	useEffect(() => {
 		gsap.to(logo.current, {
 			y: '-85%',
 			scale: 0.25,
