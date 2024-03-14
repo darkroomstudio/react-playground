@@ -28,7 +28,7 @@ export const MaskCursor: React.FC<MaskCursorProps> = () => {
 					WebkitMaskPosition: `${x - cursorSize / 2}px ${y - cursorSize / 2}px`,
 					WebkitMaskSize: `${cursorSize}px`,
 				}}
-				transition={{ type: 'tween', ease: 'backOut' }}
+				transition={{ type: 'tween', ease: 'backOut', duration: 0.3 }}
 			>
 				<p
 					onMouseEnter={() => setIsHovered(true)}
