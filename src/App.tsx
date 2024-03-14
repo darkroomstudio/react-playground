@@ -24,6 +24,10 @@ export default function App() {
 				<Suspense fallback={<div>Loading...</div>}>
 					<Routes>
 						<Route index element={<Home />}></Route>
+						<Route
+							path="/pixelated-loading"
+							element={<pg.PixelatedLoading />}
+						/>
 						<Route path="/mask-cursor" element={<pg.MaskCursor />} />
 						<Route path="/scroll-trigger" element={<pg.ScrollTriggerPage />} />
 					</Routes>

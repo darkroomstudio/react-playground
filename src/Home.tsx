@@ -6,6 +6,9 @@ const Home: React.FC = () => {
 		<Container>
 			<Header>React Playground</Header>
 			<LinkGroup>
+				<ProjectLink to="/pixelated-loading">
+					Pixelated Loading Example
+				</ProjectLink>
 				<ProjectLink to="/scroll-trigger">
 					GSAP Scroll Trigger Example
 				</ProjectLink>
