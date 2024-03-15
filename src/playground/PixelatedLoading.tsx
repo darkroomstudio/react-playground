@@ -32,20 +32,43 @@ export const PixelatedLoading: React.FC = () => {
 		}
 	}, [filename]);
 	return (
-		<>
-			<Pixelator
-				backgroundImageUrl={backgroundImageUrl}
-				data-original="/assets/pixelated-loading/fox.png"
-			/>
-		</>
+		<Container>
+			<Flex>
+				<Pixelator
+					backgroundImageUrl={backgroundImageUrl}
+					data-original="/assets/pixelated-loading/fox.png"
+				/>
+			</Flex>
+			<Button onClick={() => window.location.reload()}>Reload</Button>
+		</Container>
 	);
 };
 
+const Container = styled.div`
+	padding: 48px;
+`;
+
+const Flex = styled.div`
+	display: flex;
+`;
+
 const Pixelator = styled.div<PixelatorProps>`
-	/* height: 100vh; */
 	width: 500px;
 	height: 500px;
 	background-size: cover;
 	background-position: center;
 	background-image: url(${(props) => props.backgroundImageUrl});
+`;
+
+const Button = styled.button`
+	outline: 0;
+	border: 0;
+	border-radius: 8px;
+	background: #111;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 8px 14px;
+	margin-top: 18px;
+	cursor: pointer;
 `;
